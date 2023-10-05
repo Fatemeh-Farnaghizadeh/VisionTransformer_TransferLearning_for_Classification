@@ -22,10 +22,6 @@ def get_train_loader(transformer):
     return train_loader, class_names
 
 def get_test_loader(transformer):
-    transformer = transforms.Compose([
-        transforms.Resize((utils.IMG_SIZE, utils.IMG_SIZE)),
-        transforms.ToTensor()
-    ])
 
     train_dataset = datasets.ImageFolder(utils.TEST_PATH, transform=transformer)
     class_names = train_dataset.classes
