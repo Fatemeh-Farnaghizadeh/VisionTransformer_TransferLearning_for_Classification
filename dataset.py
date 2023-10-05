@@ -7,10 +7,6 @@ from torch.utils.data import DataLoader
 from torchvision import transforms, datasets
 
 def get_train_loader(transformer):
-    transformer = transforms.Compose([
-        transforms.Resize((utils.IMG_SIZE, utils.IMG_SIZE)),
-        transforms.ToTensor()
-    ])
 
     train_dataset = datasets.ImageFolder(utils.TRAIN_PATH, transform=transformer)
     class_names = train_dataset.classes
