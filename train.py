@@ -42,8 +42,6 @@ if __name__ == '__main__':
 
     loss_fn = torch.nn.CrossEntropyLoss()
 
-    model.train()
-
     for epoch in range(utils.EPOCHS):
         
         if epoch % 2 == 0:
@@ -54,6 +52,8 @@ if __name__ == '__main__':
 
         train_acc = 0
         test_acc = 0
+
+        model.train()
 
         for imgs, labels in train_loader:
 
